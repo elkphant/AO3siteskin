@@ -35,7 +35,7 @@ h4,
 h5,
 h6,
 .heading {
-	font-family: Lora, Palatino Linotype, Bookman Old Style, "Book Antiqua", "Noto Serif TC", "Noto Serif CJK TC", Georgia, serif;
+	font-family: Lora, "Palatino Linotype", "GenKiMin2 TW", Georgia, serif;
 	font-weight: 600;
 }
 
@@ -70,7 +70,7 @@ span.symbol,
 select, #stat_chart svg text,
 dl.stats,
 dd.language {
-	font-family: Sarabun, Leelawadee UI, 'Lucida Sans Unicode', Verdana, "Noto Sans TC", "Noto Sans CJK TC", sans-serif;
+	font-family: Sarabun, "Lucida Sans Unicode", Verdana, "GenSenRounded2 TW", sans-serif;
 }
 
 kbd,
@@ -81,7 +81,7 @@ pre,
 samp,
 .datetime,
 .splash .news .meta {
-	font-family: Monaco, Consolas, Noto Mono, Courier, monospace;
+	font-family: "Cascadia Mono", Monaco, Consolas, Noto Mono, Courier, monospace;
 }
 
 pre {
@@ -266,7 +266,8 @@ dl.meta {
 
 #footer,
 #footer .heading,
-#footer a {
+#footer a,
+#footer button  /*----updated 20/10/25*/ {
 	color: #000;
 }
 
@@ -364,6 +365,8 @@ dl.meta {
 	border-radius: 0;
 }
 
+.work.navigation .download,
+.javascript .work.navigation .download .secondary, /*----updated 11/11/25*/
 .secondary {
 	background: #FFF;
 	border-color: #DCDCDC;
@@ -417,9 +420,18 @@ li.blurb {
 	border-color: #BABABA;
 }
 
-/*────updated ???────*/
-.child {
-	background: none;
+/*────updated 02/05/2025────*/
+.child.listbox.group {
+	border-color: transparent;
+}
+
+.child > .listbox {
+	margin-inline: .5em;
+}
+
+li:has(.tags.tree) {
+    background: #DDDDDDaa;
+    border-radius: .5em;
 }
 
 /*Work blurb*/
@@ -477,7 +489,6 @@ li.blurb {
 /*────updated 24/09/24────*/
 .bookmark .user,
 .bookmark li.user.blurb {
-	background: unset;
 	border-color: #BABABA;
 	border-radius: .25em;
 }
@@ -594,10 +605,12 @@ dl.subscription.index.group dd {
 	text-align: end;
 }
 
+/*────updated 19/11/24────*/
 dl.subscription.index.group input {
-	width: min-content;
+	width: 15ex;
 	height: 2em;
 	line-height: 1.5;
+	padding-inline: 0;
 }
 
 .related_works-index h3.heading {
@@ -853,6 +866,7 @@ div.preface {
 }
 
 /*chapter index/download*/
+/*
 .chapter .secondary,
 .download .secondary {
 	top: initial;
@@ -860,6 +874,7 @@ div.preface {
 	left: 25%;
 	margin: 2.5em 0;
 }
+----updated 11/11/25*/
 
 /*comment thread*/
 .comment fieldset,
@@ -1283,7 +1298,9 @@ a:link:visited:focus,
 .bookmark .count a:hover, 
 .bookmark .count a:focus,
 #footer a:hover,
-#footer a:focus {
+#footer a:focus,
+#footer button:hover,  /*----updated 20/10/25*/
+#footer button:focus  /*----updated 20/10/25*/ {
 	color: #FEFEFE;
 	background: #6047A5;
 }
@@ -1400,10 +1417,12 @@ a.cloud8.tag {
 .actions a:link, 
 .action, 
 .action:link, 
+.actions button,  /*----updated 27/12/24*/
 .actions input, 
 input[type=submit], 
-.announcement input[type=submit], /*----updated 23/06/24*/
-button, 
+.announcement input[type=submit],  /*----updated 23/06/24*/
+.announcement .action,  /*----updated 20/10/25*/
+button,  /*----updated 20/10/25*/
 #header #search .button,
 .actions label,
 .actions a:visited, 
@@ -1434,14 +1453,18 @@ a:link.current,
 .action:focus, 
 .action:link:hover, 
 .action:link:focus, 
+.actions button:hover,  /*----updated 27/12/24*/
+.actions button:focus,  /*----updated 27/12/24*/
 .actions input:hover, 
 .actions input:focus, 
 input[type=submit]:hover, 
 input[type=submit]:focus, 
 .announcement input[type=submit]:hover, /*----updated 23/06/24*/
 .announcement input[type=submit]:focus, /*----updated 23/06/24*/
-button:hover, 
-button:focus, 
+.announcement .action:hover,  /*----updated 20/10/25*/
+.announcement .action:focus,  /*----updated 20/10/25*/
+button:hover,  /*----updated 20/10/25*/
+button:focus,  /*----updated 20/10/25*/
 #header #search .button:hover,
 #header #search .button:focus,
 .actions a:visited:hover, 
@@ -1791,4 +1814,10 @@ a.resp-sharing-button__link:hover {
 	float: left;
 	clear: none;
 	margin-right: 1.5em;
+}
+
+/*update: 19/11/24*/
+#tos_prompt,
+#tos_prompt [disabled] {
+	background: unset;
 }
